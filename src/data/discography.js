@@ -79,13 +79,27 @@ export const albums = [
     songs: [
       {
         id: 'bailar-en-la-cueva-track',
-        duration: '4:03',
-        title: 'Bailar en la Cueva',
-        concept:
-          'El baile como la primera manifestación espiritual de nuestra especie antes incluso de que existiera el lenguaje articulado.',
-        verses:
-          'Antes de que hubiera templos,\nantes de que hubiera reyes,\nantes de que el hombre impusiera\nsus primeras leyes:\n\nBailamos en la cueva,\nbailamos ante el fuego,\ny seguimos bailando\nen este nuevo ruego.',
+        title: 'Bailar en la cueva',
+        duration: '4:02',
       },
+      { id: 'bolivia', title: 'Bolivia (con Caetano Veloso)', duration: '3:56' },
+      { id: 'data-data', title: 'Data data', duration: '4:24' },
+      { id: 'la-luna-de-rasqui', title: 'La luna de Rasquí', duration: '3:40' },
+      {
+        id: 'universos-paralelos',
+        title: 'Universos paralelos (con Ana Tijoux)',
+        duration: '3:42',
+      },
+      { id: 'todo-cae', title: 'Todo cae', duration: '4:12' },
+      { id: 'esfera', title: 'Esfera', duration: '4:05' },
+      { id: 'la-plegaria-del-paparazzo', title: 'La plegaria del Paparazzo', duration: '3:30' },
+      { id: 'la-noche-no-es-ciencia', title: 'La noche no es ciencia', duration: '3:34' },
+      {
+        id: 'el-triangulo-de-las-bermudas',
+        title: 'El triángulo de las Bermudas',
+        duration: '3:14',
+      },
+      { id: 'organdi', title: 'Organdí', duration: '6:40' },
     ],
     image: `${import.meta.env.BASE_URL}images/bailar-en-la-cueva.jpg`,
     imageAlt: 'Portada de Bailar en la Cueva de Jorge Drexler',
