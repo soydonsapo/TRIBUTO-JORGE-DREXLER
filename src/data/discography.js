@@ -40,23 +40,28 @@ export const albums = [
       'Grabado íntegramente en Ciudad de México y Madrid bajo una consigna restrictiva de taller: no utilizar ningún otro instrumento que la voz y guitarras españolas acústicas.',
     tags: ['Warner Music', 'Acoustic Only', 'Latin Grammy Winner'],
     songs: [
+      { id: 'movimiento', title: 'Movimiento', duration: '3:51' },
+      { id: 'telefonia', title: 'Telefonía', duration: '3:05' },
+      { id: 'silencio', title: 'Silencio', duration: '3:27' },
       {
-        id: 'telefonia',
-        duration: '3:05',
-        title: 'Telefonía',
-        concept:
-          'Un agradecimiento emocionado a cada cable submarino, satélite y red celular que permite decirle a la persona amada que se piensa en ella a la distancia.',
-        verses:
-          'Bendita cada fibra óptica,\ncada satélite espacial,\nque lleva mi voz atómica\ndirecta a tu portal.\n\nTe quiero, te querré, te quise:\nno hay tecnología que precise\nun mensaje más cabal.',
+        id: 'pongamos-que-hablo-de-martinez',
+        title: 'Pongamos que hablo de Martínez',
+        duration: '3:02',
       },
+      { id: 'estalactitas', title: 'Estalactitas', duration: '4:21' },
+      { id: 'asilo', title: 'Asilo (con Mon Laferte)', duration: '3:02' },
       {
-        id: 'asilo',
-        duration: '3:03',
-        title: 'Asilo (ft. Mon Laferte)',
-        concept:
-          'La ternura del refugio mutuo ante un mundo exterior ruidoso y hostil. Una súplica íntima de asilo político en el abrazo del otro.',
-        verses:
-          'Dame asilo en tu regazo,\ndame tregua en tu costado.\nQue este mundo a cada paso\nnos quiere desamparados.',
+        id: 'abracadabras',
+        title: 'Abracadabras (con Julieta Venegas)',
+        duration: '3:38',
+      },
+      { id: 'mandato', title: 'Mandato', duration: '4:52' },
+      { id: 'despedir-a-los-glaciares', title: 'Despedir a los glaciares', duration: '3:37' },
+      { id: 'quimera', title: 'Quimera', duration: '3:38' },
+      {
+        id: 'salvavidas-de-hielo-track',
+        title: 'Salvavidas de hielo (con Natalia Lafourcade)',
+        duration: '3:29',
       },
     ],
     image: `${import.meta.env.BASE_URL}images/salvavidas-de-hielo.jpg`,
