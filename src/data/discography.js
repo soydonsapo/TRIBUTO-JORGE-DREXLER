@@ -115,18 +115,38 @@ export const albums = [
     tags: ['Warner Music', 'En Vivo en Estudio', 'Vientos y Madera'],
     songs: [
       {
-        id: 'la-trama-y-el-desenlace',
-        duration: '4:06',
-        title: 'La Trama y el Desenlace',
-        concept:
-          'El célebre aforismo drexleriano: disfrutar el viaje, el proceso y la incertidumbre en vez de obsesionarse con el desenlace o la meta.',
-        verses:
-          'Que no nos apuren,\nque el tiempo es ahora.\nAmar la trama más que el desenlace.\n\nDejar que la música trace\nlas curvas del camino,\nsin preguntarle al destino\nqué es lo que con nosotros hace.',
+        id: 'tres-mil-millones-de-latidos',
+        title: 'Tres mil millones de latidos',
+        duration: '3:48',
       },
+      { id: 'la-trama-y-el-desenlace', title: 'La trama y el desenlace', duration: '4:06' },
+      { id: 'las-transeuntes', title: 'Las transeúntes', duration: '5:03' },
+      { id: 'la-nieve-en-la-bola-de-nieve', title: 'La nieve en la bola de nieve', duration: '4:53' },
+      { id: 'mundo-abisal', title: 'Mundo abisal', duration: '4:08' },
+      { id: 'toque-de-queda', title: 'Toque de queda', duration: '3:48' },
+      {
+        id: 'una-cancion-me-trajo-hasta-aqui',
+        title: 'Una canción me trajo hasta aquí',
+        duration: '3:18',
+      },
+      {
+        id: 'aquiles-por-su-talon-es-aquiles',
+        title: 'Aquiles, por su talón es Aquiles',
+        duration: '3:35',
+      },
+      {
+        id: 'i-dont-worry-about-a-thing',
+        title: "I Don't Worry About a Thing (escrita por Mose Allison)",
+        duration: '4:19',
+      },
+      { id: 'noctiluca', title: 'Noctiluca', duration: '3:27' },
+      { id: 'todos-a-sus-puestos', title: 'Todos a sus puestos', duration: '3:03' },
+      { id: 'telon', title: 'Telón', duration: '2:32' },
+      { id: 'criticas', title: 'Críticas', duration: '3:04' },
     ],
     image: `${import.meta.env.BASE_URL}images/amar-la-trama.jpg`,
     imageAlt: 'Portada de Amar la Trama de Jorge Drexler',
-    count: 12,
+    count: 13,
     note: 'En vivo en estudio',
   },
   {
