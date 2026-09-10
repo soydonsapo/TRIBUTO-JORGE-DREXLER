@@ -64,13 +64,13 @@ export default function Hero() {
         </div>
 
         <div className="lg:col-span-5 relative flex justify-center">
-          <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-surface-container-highest">
+          <div className="relative w-full max-w-[420px] self-start rounded-3xl overflow-hidden shadow-xl bg-inverse-surface">
             <img
-              className="w-full h-full object-cover object-[15%_center]"
+              className="block w-full h-auto object-contain"
               alt="Retrato de Jorge Drexler con gafas negras y chaqueta roja"
               src={import.meta.env.BASE_URL + 'images/jorge-drexler.jpg'}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex flex-col justify-end p-gutter-lg">
+            <div className="flex flex-col p-gutter-lg">
               <span className="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest">
                 Montevideo, 1964
               </span>
