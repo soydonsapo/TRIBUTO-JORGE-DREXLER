@@ -66,7 +66,7 @@ export default function Hero() {
         <div className="lg:col-span-5 relative flex justify-center">
           <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-surface-container-highest">
             <img
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[15%_center]"
               alt="Retrato de Jorge Drexler con gafas negras y chaqueta roja"
               src={import.meta.env.BASE_URL + 'images/jorge-drexler.jpg'}
             />
