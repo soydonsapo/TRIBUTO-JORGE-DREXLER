@@ -42,6 +42,7 @@ export const albums = [
     songs: [
       {
         id: 'telefonia',
+        duration: '3:05',
         title: 'Telefonía',
         concept:
           'Un agradecimiento emocionado a cada cable submarino, satélite y red celular que permite decirle a la persona amada que se piensa en ella a la distancia.',
@@ -50,6 +51,7 @@ export const albums = [
       },
       {
         id: 'asilo',
+        duration: '3:03',
         title: 'Asilo (ft. Mon Laferte)',
         concept:
           'La ternura del refugio mutuo ante un mundo exterior ruidoso y hostil. Una súplica íntima de asilo político en el abrazo del otro.',
@@ -72,6 +74,7 @@ export const albums = [
     songs: [
       {
         id: 'bailar-en-la-cueva-track',
+        duration: '4:03',
         title: 'Bailar en la Cueva',
         concept:
           'El baile como la primera manifestación espiritual de nuestra especie antes incluso de que existiera el lenguaje articulado.',
@@ -94,6 +97,7 @@ export const albums = [
     songs: [
       {
         id: 'la-trama-y-el-desenlace',
+        duration: '4:06',
         title: 'La Trama y el Desenlace',
         concept:
           'El célebre aforismo drexleriano: disfrutar el viaje, el proceso y la incertidumbre en vez de obsesionarse con el desenlace o la meta.',
@@ -116,6 +120,7 @@ export const albums = [
     songs: [
       {
         id: '12-segundos-track',
+        duration: '4:06',
         title: '12 Segundos de Oscuridad',
         concept:
           'La metáfora de soportar la noche interior con la certeza matemática de que la luz del faro siempre volverá a girar.',
@@ -138,6 +143,7 @@ export const albums = [
     songs: [
       {
         id: 'todo-se-transforma',
+        duration: '3:37',
         title: 'Todo se transforma',
         concept:
           'Basada en el principio físico de conservación de la energía de Lavoisier: ninguna caricia, moneda o verso arrojado al universo desaparece jamás.',
@@ -160,6 +166,7 @@ export const albums = [
     songs: [
       {
         id: 'la-edad-del-cielo',
+        duration: '3:40',
         title: 'La Edad del Cielo',
         concept:
           'Una reflexión sobre nuestra pequeñez cósmica y la necesidad de no malgastar el breve instante de lucidez que nos concede la existencia.',

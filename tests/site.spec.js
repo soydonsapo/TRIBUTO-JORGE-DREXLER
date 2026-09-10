@@ -30,26 +30,34 @@ test('carga el diseño, imágenes y secciones sin desbordamiento', async ({ page
   await page.screenshot({ path: `.test-results/${testInfo.project.name}.png`, fullPage: true })
 })
 
-test('abre álbumes, canciones, vuelve y cierra con Escape', async ({ page }) => {
+test('muestra canciones sin botones y permite cerrar cada álbum', async ({ page }) => {
   await page.goto('/')
   const card = page.getByRole('button', { name: 'Explorar Tinta y Tiempo', exact: true })
   await card.click()
   const dialog = page.getByRole('dialog')
   await expect(dialog).toBeVisible()
-  await dialog.getByRole('button', { name: /Tocarte/ }).click()
-  await expect(dialog.getByText('Letra pendiente de agregar.')).toBeVisible()
-  await dialog.getByRole('button', { name: 'Volver al álbum' }).click()
   await expect(dialog.getByText('Canciones del álbum')).toBeVisible()
-  await expect(dialog.getByText('Letra pendiente', { exact: true })).toHaveCount(10)
+  await expect(dialog.getByRole('listitem')).toHaveCount(10)
   await expect(dialog.getByText('Duermevela', { exact: true })).toBeVisible()
   await page.keyboard.press('Escape')
   await expect(dialog).not.toBeVisible()
   await expect(card).toBeFocused()
-  await page.getByRole('button', { name: 'Explorar Eco', exact: true }).click()
-  await expect(
-    page.getByRole('dialog').getByText('Todo se transforma', { exact: true }),
-  ).toBeVisible()
-  await page.getByRole('button', { name: 'Cerrar álbum' }).click()
+  const cards = page.locator('#musica article').getByRole('button')
+  for (let index = 0; index < (await cards.count()); index++) {
+    await cards.nth(index).click()
+    await expect(dialog.getByRole('button')).toHaveCount(1)
+    const rows = dialog.getByRole('listitem')
+    for (const row of await rows.all()) {
+      await expect(row).toContainText(/\d+:\d{2}/)
+      await expect(row.locator('svg, button, a, [role="button"]')).toHaveCount(0)
+    }
+    await rows.first().click()
+    await expect(dialog.getByRole('list')).toBeVisible()
+    await expect(
+      dialog.getByText(/Letra pendiente|Explorar la canción|Lectura poética/),
+    ).toHaveCount(0)
+    await dialog.getByRole('button', { name: 'Cerrar álbum' }).click()
+  }
 })
 
 test('valida el formulario y comunica que no envía correos', async ({ page }) => {
