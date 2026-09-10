@@ -67,8 +67,8 @@ export default function Hero() {
           <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-surface-container-highest">
             <img
               className="w-full h-full object-cover"
-              alt="Jorge Drexler sosteniendo una guitarra acústica de madera natural en un estudio cálido bañado por luz atardecer dorada y sombras suaves, fondo con libros y papeles pautados en tonos terracota y crema cálido, estilo fotográfico editorial elegante de alta definición"
-              src={import.meta.env.BASE_URL + 'images/editorial-1.jpg'}
+              alt="Retrato de Jorge Drexler con gafas negras y chaqueta roja"
+              src={import.meta.env.BASE_URL + 'images/jorge-drexler.jpg'}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex flex-col justify-end p-gutter-lg">
               <span className="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest">
