@@ -12,7 +12,7 @@ export default function Discography() {
         id="musica"
         eyebrow="Música"
         title="Discografía Interactiva"
-        description="Haz clic en cualquier álbum para sumergirte en sus secretos de producción, anécdotas de estudio y acceder al análisis poético de sus canciones más emblemáticas."
+        description="Haz clic en cualquier álbum para sumergirte en el listado de canciones."
         tinted
       >
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
