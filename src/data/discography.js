@@ -8,30 +8,24 @@ export const albums = [
       'Compuesto durante los meses de confinamiento, explora la incertidumbre de la página en blanco y la dicha del reencuentro corporal. Contó con los suntuosos arreglos orquestales de Fernando Velázquez.',
     tags: ['Sony Music', 'Orquestal', '7 Latin Grammys'],
     songs: [
+      { id: 'el-plan-maestro', title: 'El plan maestro (con Rub?n Blades)', duration: '3:50' },
+      { id: 'corazon-impar', title: 'Coraz?n impar', duration: '3:10' },
+      { id: 'cinturon-blanco', title: 'Cintur?n blanco', duration: '3:40' },
+      { id: 'tocarte', title: 'Tocarte (con C. Tangana)', duration: '2:34' },
+      { id: 'tinta-y-tiempo-track', title: 'Tinta y tiempo', duration: '4:09' },
+      { id: 'oh-algoritmo', title: '?Oh, Algoritmo! (con Noga Erez)', duration: '3:04' },
+      { id: 'amor-al-arte', title: 'Amor al arte', duration: '4:30' },
       {
-        id: 'tocarte',
-        title: 'Tocarte (ft. C. Tangana)',
-        concept:
-          'Una milonga contemporánea con pulso funk carioca que celebra el tacto y la sensualidad tras el aislamiento. Escrita a cuatro manos con Pucho en Madrid.',
-        verses:
-          'Valga la redundancia,\nvalga la intensidad:\nquiero tocarte,\nponerme en tu lugar.\n\nTocar la piel que roza,\nla carne que palpita,\nel tiempo que no sobra\ny la vida que nos quita.',
+        id: 'el-dia-que-estrenaste-al-mundo',
+        title: 'El d?a que estrenaste al mundo',
+        duration: '3:09',
       },
       {
-        id: 'cinturon-blanco',
-        title: 'Cinturón Blanco',
-        concept:
-          'Inspirada en el judo y la filosofía zen: cuando crees dominar el amor o el arte, la única sabiduría real es desaprender y volver a ser principiante con cinturón blanco.',
-        verses:
-          'Rebobinar,\nvolver a empezar de cero.\nSer otra vez\nel aprendiz primero.\n\nBorrar la huella de lo andado,\nvolver a no saber nada:\nun cinturón blanco atado\na una nueva madrugada.',
+        id: 'bendito-desconcierto',
+        title: 'Bendito desconcierto (con Mart?n Buscaglia)',
+        duration: '3:31',
       },
-      {
-        id: 'el-plan-maestro',
-        title: 'El Plan Maestro (ft. Rubén Blades)',
-        concept:
-          'Una oda a la aparición del amor como mecanismo evolutivo: cómo hace miles de millones de años la vida inventó la reproducción sexual y la poesía.',
-        verses:
-          'De una sola célula venimos,\nnadando en el océano primordial.\nY para encontrarnos tuvimos\nque inventar el beso universal.',
-      },
+      { id: 'duermevela', title: 'Duermevela', duration: '3:14' },
     ],
     image: `${import.meta.env.BASE_URL}images/tinta-y-tiempo.jpg`,
     imageAlt: 'Portada de Tinta y Tiempo de Jorge Drexler',

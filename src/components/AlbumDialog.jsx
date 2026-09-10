@@ -47,22 +47,32 @@ export default function AlbumDialog({ album, onClose }) {
               Volver al álbum
             </Button>
             <p className="text-sm italic text-tertiary">Álbum: {album.title}</p>
-            <div className="rounded-2xl bg-surface-container-low p-5">
-              <h3 className="mb-2 text-label-sm uppercase text-primary">Inspiración conceptual</h3>
-              <p className="text-sm leading-7 text-on-surface-variant">{song.concept}</p>
-            </div>
-            <div className="rounded-2xl bg-surface-container p-5">
-              <h3 className="mb-3 text-label-sm uppercase text-secondary">
-                Lectura poética del mockup
-              </h3>
-              <p className="whitespace-pre-line font-quote-editorial text-xl leading-relaxed">
-                {song.verses}
+            {!song.verses ? (
+              <p className="rounded-2xl bg-surface-container-low p-5 text-on-surface-variant">
+                Letra pendiente de agregar.
               </p>
-            </div>
-            <p className="text-xs text-on-surface-variant">
-              Texto editorial de la maqueta; no es una transcripción verificada de la letra
-              original.
-            </p>
+            ) : (
+              <>
+                <div className="rounded-2xl bg-surface-container-low p-5">
+                  <h3 className="mb-2 text-label-sm uppercase text-primary">
+                    Inspiración conceptual
+                  </h3>
+                  <p className="text-sm leading-7 text-on-surface-variant">{song.concept}</p>
+                </div>
+                <div className="rounded-2xl bg-surface-container p-5">
+                  <h3 className="mb-3 text-label-sm uppercase text-secondary">
+                    Lectura poética del mockup
+                  </h3>
+                  <p className="whitespace-pre-line font-quote-editorial text-xl leading-relaxed">
+                    {song.verses}
+                  </p>
+                </div>
+                <p className="text-xs text-on-surface-variant">
+                  Texto editorial de la maqueta; no es una transcripción verificada de la letra
+                  original.
+                </p>
+              </>
+            )}
           </div>
         ) : (
           <div className="flex flex-col gap-6">
@@ -81,7 +91,11 @@ export default function AlbumDialog({ album, onClose }) {
               ))}
             </div>
             <div>
-              <h3 className="text-label-sm uppercase text-secondary">Canciones destacadas</h3>
+              <h3 className="text-label-sm uppercase text-secondary">
+                {album.songs.length === album.count
+                  ? 'Canciones del álbum'
+                  : 'Canciones destacadas'}
+              </h3>
               <List>
                 {album.songs.map((track, index) => (
                   <ListItemButton
@@ -92,7 +106,13 @@ export default function AlbumDialog({ album, onClose }) {
                     <span className="text-sm text-tertiary">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <ListItemText primary={track.title} secondary="Explorar la canción" />
+                    <ListItemText
+                      primary={track.title}
+                      secondary={track.verses ? 'Explorar la canción' : 'Letra pendiente'}
+                    />
+                    {track.duration && (
+                      <span className="shrink-0 text-sm text-tertiary">{track.duration}</span>
+                    )}
                     <AutoStories color="primary" />
                   </ListItemButton>
                 ))}
