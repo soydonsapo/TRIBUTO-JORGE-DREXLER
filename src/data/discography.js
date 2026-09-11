@@ -225,15 +225,17 @@ export const albums = [
       'Producido en Madrid junto a Juan Campodónico. El disco bisagra que combinó milongas criollas con samplers y ordenadores portátiles primitivos.',
     tags: ['Virgin', 'Milonga Electrónica', 'Piedra Angular'],
     songs: [
-      {
-        id: 'la-edad-del-cielo',
-        duration: '3:40',
-        title: 'La Edad del Cielo',
-        concept:
-          'Una reflexión sobre nuestra pequeñez cósmica y la necesidad de no malgastar el breve instante de lucidez que nos concede la existencia.',
-        verses:
-          'No somos más que una gota\nen este mar infinito.\nUn verso que se desborda,\nun tímido y dulce grito.\n\nCalma, calma:\nque no hay apuro\nen la edad del cielo.',
-      },
+      { id: 'la-edad-del-cielo', title: 'La edad del cielo', duration: '3:19' },
+      { id: 'memoria-del-cuero', title: 'Memoria del cuero', duration: '5:04' },
+      { id: 'frontera-track', title: 'Frontera', duration: '3:26' },
+      { id: 'rio-abajo', title: 'Río abajo', duration: '3:07' },
+      { id: 'corazon-de-cristal', title: 'Corazón de cristal', duration: '4:13' },
+      { id: 'madre-tierra', title: 'Madre tierra', duration: '3:29' },
+      { id: 'princesa-bacana', title: 'Princesa bacana', duration: '3:09' },
+      { id: 'alto-al-fuego', title: 'Alto al fuego', duration: '3:32' },
+      { id: 'aquellos-tiempos', title: 'Aquellos tiempos', duration: '3:20' },
+      { id: 'el-sur-del-sur', title: 'El sur del sur', duration: '3:45' },
+      { id: 'camino-a-la-paloma', title: 'Camino a La Paloma', duration: '2:25' },
     ],
     image: `${import.meta.env.BASE_URL}images/frontera.jpg`,
     imageAlt: 'Portada de Frontera de Jorge Drexler',
