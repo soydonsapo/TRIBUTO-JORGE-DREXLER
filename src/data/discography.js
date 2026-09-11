@@ -160,16 +160,36 @@ export const albums = [
       {
         id: '12-segundos-track',
         duration: '4:06',
-        title: '12 Segundos de Oscuridad',
-        concept:
-          'La metáfora de soportar la noche interior con la certeza matemática de que la luz del faro siempre volverá a girar.',
-        verses:
-          'Un haz de luz que se aleja,\ny doce segundos de oscuridad.\nNo hay brújula que te proteja,\nsolo tu propia soledad.\n\nGuarda la calma en la sombra:\nla luz que no ves, te nombra.',
+        title: '12 segundos de oscuridad',
       },
+      {
+        id: 'la-vida-es-mas-compleja-de-lo-que-parece',
+        title: 'La vida es más compleja de lo que parece',
+        duration: '3:08',
+      },
+      { id: 'transoceanica', title: 'Transoceánica', duration: '3:24' },
+      { id: 'disneylandia', title: 'Disneylandia', duration: '3:49' },
+      { id: 'el-otro-engranaje', title: 'El otro engranaje', duration: '3:54' },
+      {
+        id: 'high-and-dry',
+        title: 'High and Dry (versión del tema de Radiohead)',
+        duration: '3:44',
+      },
+      {
+        id: 'la-infidelidad-de-la-era-informatica',
+        title: 'La infidelidad de la era informática',
+        duration: '3:03',
+      },
+      { id: 'hermana-duda', title: 'Hermana duda', duration: '2:59' },
+      { id: 'inoportuna', title: 'Inoportuna', duration: '2:44' },
+      { id: 'quien-quiera-que-seas', title: 'Quien quiera que seas', duration: '3:31' },
+      { id: 'soledad', title: 'Soledad (con Maria Rita)', duration: '3:58' },
+      { id: 'sanar', title: 'Sanar', duration: '4:28' },
+      { id: 'el-fuego-y-el-combustible', title: 'El fuego y el combustible', duration: '3:40' },
     ],
     image: `${import.meta.env.BASE_URL}images/12-segundos-de-oscuridad.jpg`,
     imageAlt: 'Portada de 12 Segundos de Oscuridad de Jorge Drexler',
-    count: 12,
+    count: 13,
     note: 'Inspirado en Cabo Polonio',
   },
   {
