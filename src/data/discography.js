@@ -200,19 +200,21 @@ export const albums = [
       "El álbum fundamental que contiene 'Todo se transforma' y marcó el lenguaje definitivo de Drexler: melodías pop cristalinas bañadas en física cuántica y décimas populares.",
     tags: ['DRO EastWest', 'Clásico Universal', 'Pop & Poesía'],
     songs: [
-      {
-        id: 'todo-se-transforma',
-        duration: '3:37',
-        title: 'Todo se transforma',
-        concept:
-          'Basada en el principio físico de conservación de la energía de Lavoisier: ninguna caricia, moneda o verso arrojado al universo desaparece jamás.',
-        verses:
-          'Cada uno da lo que recibe,\nluego recibe lo que da.\nNada es más simple,\nno hay otra norma:\nnada se pierde,\ntodo se transforma.\n\nEl vino guardó el racimo,\nel beso guardó la boca,\ny la memoria revive\nlo que el olvido no toca.',
-      },
+      { id: 'eco-track', title: 'Eco', duration: '3:22' },
+      { id: 'deseo', title: 'Deseo', duration: '3:44' },
+      { id: 'todo-se-transforma', title: 'Todo se transforma', duration: '3:37' },
+      { id: 'guitarra-y-vos', title: 'Guitarra y vos', duration: '3:55' },
+      { id: 'transporte', title: 'Transporte', duration: '4:11' },
+      { id: 'milonga-del-moro-judio', title: 'Milonga del moro judío', duration: '3:54' },
+      { id: 'polvo-de-estrellas', title: 'Polvo de estrellas', duration: '3:57' },
+      { id: 'se-va-se-va-se-fue', title: 'Se va, se va, se fue', duration: '3:05' },
+      { id: 'don-de-fluir', title: 'Don de fluir', duration: '3:55' },
+      { id: 'fusion', title: 'Fusión', duration: '3:40' },
+      { id: 'salvapantallas', title: 'Salvapantallas', duration: '4:32' },
     ],
     image: `${import.meta.env.BASE_URL}images/eco.jpg`,
     imageAlt: 'Portada de Eco de Jorge Drexler',
-    count: 12,
+    count: 11,
     note: 'Incluye «Todo se transforma»',
   },
   {
