@@ -7,6 +7,7 @@ import Instagram from '@mui/icons-material/Instagram'
 import YouTube from '@mui/icons-material/YouTube'
 import Facebook from '@mui/icons-material/Facebook'
 import MusicNote from '@mui/icons-material/MusicNote'
+import { supabase } from '../lib/supabaseClient'
 
 const socials = [
   { label: 'Instagram oficial', url: 'https://www.instagram.com/drexlerjorge/', icon: Instagram },
@@ -23,19 +24,41 @@ export default function Community() {
   const [values, setValues] = useState({ name: '', email: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
-  function submit(event) {
+  const [status, setStatus] = useState('idle')
+
+  async function submit(event) {
     event.preventDefault()
     const next = {}
     if (values.name.trim().length < 2) next.name = 'Escribe tu nombre (al menos 2 caracteres).'
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim()))
       next.email = 'Escribe un correo electrónico válido.'
     setErrors(next)
-    setSubmitted(!Object.keys(next).length)
+    setSubmitted(false)
+    setStatus('idle')
+    if (Object.keys(next).length || !supabase) {
+      if (!supabase && !Object.keys(next).length) setStatus('config-error')
+      return
+    }
+
+    setStatus('loading')
+    const { error } = await supabase.from('newsletter_subscribers').insert({
+      name: values.name.trim(),
+      email: values.email.trim().toLowerCase(),
+    })
+
+    if (error) {
+      setStatus(error.code === '23505' ? 'duplicate' : 'error')
+      return
+    }
+
+    setSubmitted(true)
+    setStatus('success')
   }
   function change(field, value) {
     setValues((previous) => ({ ...previous, [field]: value }))
     setErrors((previous) => ({ ...previous, [field]: undefined }))
     setSubmitted(false)
+    setStatus('idle')
   }
   return (
     <section
@@ -124,16 +147,34 @@ export default function Community() {
               }}
             />
             <p className="text-xs leading-relaxed text-on-surface-variant">
-              Formulario de demostración. Tus datos no se guardan ni se envían; la suscripción aún
-              no está habilitada.
+              Recibirás novedades de música, conciertos y nuevas palabras de Jorge Drexler.
             </p>
-            <Button type="submit" variant="contained" endIcon={<Send />}>
-              Probar suscripción
+            <Button
+              type="submit"
+              variant="contained"
+              endIcon={<Send />}
+              disabled={status === 'loading'}
+            >
+              {status === 'loading' ? 'Guardando...' : 'Unirme al círculo'}
             </Button>
-            {submitted && (
+            {submitted && status === 'success' && (
+              <Alert severity="success" role="status">
+                ¡Gracias, {values.name.trim()}! Ya estás en el círculo.
+              </Alert>
+            )}
+            {status === 'duplicate' && (
               <Alert severity="info" role="status">
-                ¡Gracias, {values.name.trim()}! El formulario es válido. Esta demostración no
-                realiza una suscripción ni envía correos.
+                Este correo ya forma parte del círculo.
+              </Alert>
+            )}
+            {status === 'config-error' && (
+              <Alert severity="error" role="status">
+                La suscripción no está configurada todavía. Completa las variables de Supabase.
+              </Alert>
+            )}
+            {status === 'error' && (
+              <Alert severity="error" role="status">
+                No hemos podido guardar tus datos. Inténtalo de nuevo.
               </Alert>
             )}
           </form>

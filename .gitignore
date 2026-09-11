@@ -16,6 +16,10 @@ dist-ssr
 # Dotfiles and dotdirectories stay local at every level.
 .*
 !.gitignore
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+!public/.nojekyll
 *.suo
 *.ntvs*
 *.njsproj

@@ -14,6 +14,43 @@ npm.cmd run dev
 Abre la dirección que indique Vite, normalmente http://localhost:5173. El servidor debe permanecer en ejecución.
 En PowerShell se usa `npm.cmd` para evitar las restricciones de ejecución de `npm.ps1`.
 
+## Publicar en GitHub Pages
+
+El workflow `.github/workflows/deploy-pages.yml` compila y publica el sitio automáticamente en
+cada push a `main`. En el repositorio, configura estos secretos en Settings > Secrets and variables
+> Actions:
+
+- `VITE_SUPABASE_URL`: `https://ysfbmyeldtlgwndtyqcj.supabase.co`
+- `VITE_SUPABASE_ANON_KEY`: la clave pública `publishable` del proyecto Supabase
+
+En Settings > Pages selecciona `GitHub Actions` como fuente de publicación. La clave `publishable`
+es segura para incluir en el bundle del navegador; nunca configures `service_role` como secreto de
+build ni en el código cliente.
+
+## Supabase
+
+La suscripción guarda nombre y correo en `public.newsletter_subscribers`. La migración activa RLS,
+permite insertar desde el navegador y no permite leer los registros desde la clave pública.
+
+Para desarrollo local, instala Docker Desktop y ejecuta:
+
+```powershell
+npx.cmd supabase start
+npx.cmd supabase status
+```
+
+Usa la URL API y la `anon key` que muestra `supabase status` en `.env.local`:
+
+```env
+VITE_SUPABASE_URL=http://127.0.0.1:54321
+VITE_SUPABASE_ANON_KEY=tu-anon-key-local
+```
+
+Para un proyecto alojado, autentica la CLI con `npx.cmd supabase login`, enlázalo con
+`npx.cmd supabase link --project-ref <project-ref>` y aplica la migración con
+`npx.cmd supabase db push`. Consulta las credenciales públicas con `npx.cmd supabase status` o
+desde Project Settings > API. La `service_role` nunca debe ir en `.env.local` del navegador.
+
 ## Tecnología y estructura
 
 - React 19 con componentes funcionales, estado local y listas basadas en datos.
@@ -27,9 +64,7 @@ En PowerShell se usa `npm.cmd` para evitar las restricciones de ejecución de `n
 
 ## Funcionalidades y alcance
 
-Navegación por secciones y menú móvil; siete álbumes con detalle de canciones; carrusel de cinco videos; formulario con validación; acceso a la escucha en YouTube. Los diálogos permiten cerrar con Escape y devuelven el foco al elemento de origen. Se respeta la preferencia de movimiento reducido.
-
-El formulario es una demostración: no guarda datos, no registra suscripciones y no envía correos. Para habilitar suscripciones reales se requiere conectar un servicio o endpoint y gestionar sus respuestas.
+Navegación por secciones y menú móvil; siete álbumes con detalle de canciones; carrusel de cinco videos; formulario con validación y registro en Supabase; acceso a la escucha en YouTube. Los diálogos permiten cerrar con Escape y devuelven el foco al elemento de origen. Se respeta la preferencia de movimiento reducido.
 
 El mockup no incluye archivos de audio. El control flotante abre el video oficial en YouTube en lugar de simular una reproducción. Las imágenes y textos editoriales proceden del mockup; las lecturas poéticas no se presentan como transcripciones verificadas de letras. Este proyecto es un tributo independiente.
 

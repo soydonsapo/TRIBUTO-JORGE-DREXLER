@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/TRIBUTO-JORGE-DREXLER/',
+  base: process.env.GITHUB_ACTIONS ? '/TRIBUTO-JORGE-DREXLER/' : '/',
   plugins: [react(), tailwindcss()],
 })

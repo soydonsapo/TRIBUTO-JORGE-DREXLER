@@ -60,19 +60,20 @@ test('muestra canciones sin botones y permite cerrar cada álbum', async ({ page
   }
 })
 
-test('valida el formulario y comunica que no envía correos', async ({ page }) => {
+test('valida el formulario y registra una suscripción', async ({ page }) => {
+  await page.route('**/rest/v1/newsletter_subscribers*', async (route) => {
+    await route.fulfill({ status: 201, body: '' })
+  })
   await page.goto('/')
-  await page.getByRole('button', { name: 'Probar suscripción' }).click()
+  await page.getByRole('button', { name: 'Unirme al círculo' }).click()
   await expect(page.getByText('Escribe tu nombre (al menos 2 caracteres).')).toBeVisible()
   await page.getByLabel('Nombre y apellido').fill('Sergio')
   await page.getByLabel('Correo electrónico').fill('invalido')
-  await page.getByRole('button', { name: 'Probar suscripción' }).click()
+  await page.getByRole('button', { name: 'Unirme al círculo' }).click()
   await expect(page.getByText('Escribe un correo electrónico válido.')).toBeVisible()
   await page.getByLabel('Correo electrónico').fill('sergio@example.com')
-  await page.getByRole('button', { name: 'Probar suscripción' }).click()
-  await expect(page.getByRole('status')).toContainText(
-    'no realiza una suscripción ni envía correos',
-  )
+  await page.getByRole('button', { name: 'Unirme al círculo' }).click()
+  await expect(page.getByRole('status')).toContainText('Ya estás en el círculo')
 })
 
 test('el carrusel desplaza videos y el menú navega a música', async ({ page }, testInfo) => {
